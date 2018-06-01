@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Menú</title>
+</h:head>
+<h:body>
+	<p:clock displayMode="analog" />
+	<p:growl id="messages" showDetail="false" />
+	<p:menu>
+		<p:submenu label="Menú">
+			<p:menuitem value="Atrás" url="menu.xhtml" />
+			<p:menuitem value="Salir" url="helloworld.xhtml" icon="ui-icon-power" />
+		</p:submenu>
+	</p:menu>
+	<h1>Actualizar registro tabla Módulos:</h1>
+
+	<h:form>
+		<p:dataTable var="registro"
+			value="#{botonModificarVista.registroModulos}">
+			<p:column headerText="Id Módulo">
+				<h:outputText  value="#{registro.idModulo}" />
+			</p:column>
+			<p:column headerText="Nombre">
+				<h:outputText  value="#{registro.nombre}" />
+			</p:column>
+			<p:column headerText="Duración">
+				<h:outputText  value="#{registro.duracion}" />
+			</p:column>
+			<p:column headerText="Curso">
+				<h:outputText value="#{registro.curso}" />
+			</p:column>
+		
+		<!--  
+		<p:dataTable var="modulo"
+			value="#{botonModificarVista.registroModulos}">
+			<p:column>
+				<h:outputText value="#{modulo.idModulo}"  />
+			</p:column>
+			<p:column>
+				<h:inputText value="#{modulo.nombre}" />
+			</p:column>
+			<p:column>
+				<h:inputText value="#{modulo.duracion}" />
+			</p:column>
+			<p:column>
+				<h:inputText value="#{modulo.curso}" />
+			</p:column>
+			<p:column>
+				<p:commandLink id="enviar" action="ConfirmarActualizarModulo.xhtml" ajax="false">
+					<h:outputText value="Enviar" />
+				</p:commandLink>
+			</p:column>
+		</p:dataTable>
+		
+	-->
+		<p:column>
+		<h3>Modificar registro:</h3>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="idModulo">Id Módulo:</h:outputLabel>
+			<h:outputText value="#{botonModificarVista.idModulo}" id="idModulo"/>
+			<br/>
+			<br/>
+
+			<h:outputLabel for="nombre">Nombre:</h:outputLabel>
+			<h:inputText value="#{registro.nombre}"></h:inputText>
+			<br/>
+			<br/>
+
+			<h:outputLabel for="duracion">Duracion:</h:outputLabel>
+			<h:inputText value="#{registro.duracion}"></h:inputText>
+			<br/>
+			<br/>
+
+			<h:outputLabel for="curso">Curso:</h:outputLabel>
+			<h:inputText value="#{registro.curso}"></h:inputText>
+			<br/>
+			<br/>
+
+			<!-- <h:commandButton action="ConfirmarActualizarModulo" value="Enviar"></h:commandButton>-->
+			<a href="ConfirmarActualizarModulo.xhtml" >Enviar</a>
+		</h:panelGrid>
+		</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
