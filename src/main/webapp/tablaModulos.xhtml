@@ -13,8 +13,7 @@
 		<p:menu>
 			<p:submenu label="Menú">
 				<p:menuitem value="Atrás" url="Menu.xhtml" />
-				<p:menuitem value="Salir" url="index.xhtml"
-					icon="ui-icon-power" />
+				<p:menuitem value="Salir" url="index.xhtml" icon="ui-icon-power" />
 			</p:submenu>
 		</p:menu>
 		<h1>Registros de la tabla Módulos</h1>
@@ -33,11 +32,21 @@
 				<h:outputText value="#{modulo.curso}" />
 			</p:column>
 			<p:column headerText="Seleccionar registro a modificar:">
-				<p:commandLink id="modificar" action="ActualizarRegistroTablaModulos.xhtml" actionListener="#{botonModificarVista.botonParaUnaPrimaria(modulo.idModulo)}" ajax="false">
+				<p:commandLink id="modificar"
+					action="ActualizarRegistroTablaModulos.xhtml"
+					actionListener="#{botonModificarVista.botonParaUnaPrimaria(modulo.idModulo)}"
+					ajax="false" onclick="PF('carga').show()">
 					<h:outputText value="Modificar registro" />
 				</p:commandLink>
 			</p:column>
 		</p:dataTable>
+
+		<p:dialog header="Cargando..." widgetVar="carga" modal="true"
+			resizable="false">
+			<h:panelGrid id="greeting" columns="1" cellpadding="4">
+				<h:outputText value="Seleccionando registro, espere un momento por favor..." />
+			</h:panelGrid>
+		</p:dialog>
 	</h:form>
 </h:body>
 </html>

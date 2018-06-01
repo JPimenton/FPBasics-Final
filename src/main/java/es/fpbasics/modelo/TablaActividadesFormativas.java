@@ -1,8 +1,5 @@
 package es.fpbasics.modelo;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class TablaActividadesFormativas {
 
@@ -42,40 +39,40 @@ public class TablaActividadesFormativas {
 		return horasDedicadas;
 	}
 
-	@Override
-	public int hashCode() {
-		final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder();
-		
-			hashCodeBuilder.append(idActividad);
-			hashCodeBuilder.append(empresa);
-			hashCodeBuilder.append(idBloque);
-			hashCodeBuilder.append(descripcionActividad);
-			hashCodeBuilder.append(horasDedicadas);
-		
-		return hashCodeBuilder.toHashCode();
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof TablaActividadesFormativas) {
-			
-			final TablaActividadesFormativas param = (TablaActividadesFormativas)obj;
-			final EqualsBuilder equalsBuilder = new EqualsBuilder();
-			
-			equalsBuilder.append(this.idActividad, param.idActividad);
-			equalsBuilder.append(this.empresa, param.empresa);
-			equalsBuilder.append(this.idBloque, param.idBloque);
-			equalsBuilder.append(this.descripcionActividad, param.descripcionActividad);
-			equalsBuilder.append(this.horasDedicadas, param.horasDedicadas);
-			
-			return equalsBuilder.isEquals();
-		}
-		return false;
-	}
-
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
-	}
+//	@Override
+//	public int hashCode() {
+//		final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder();
+//		
+//			hashCodeBuilder.append(idActividad);
+//			hashCodeBuilder.append(empresa);
+//			hashCodeBuilder.append(idBloque);
+//			hashCodeBuilder.append(descripcionActividad);
+//			hashCodeBuilder.append(horasDedicadas);
+//		
+//		return hashCodeBuilder.toHashCode();
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (obj instanceof TablaActividadesFormativas) {
+//			
+//			final TablaActividadesFormativas param = (TablaActividadesFormativas)obj;
+//			final EqualsBuilder equalsBuilder = new EqualsBuilder();
+//			
+//			equalsBuilder.append(this.idActividad, param.idActividad);
+//			equalsBuilder.append(this.empresa, param.empresa);
+//			equalsBuilder.append(this.idBloque, param.idBloque);
+//			equalsBuilder.append(this.descripcionActividad, param.descripcionActividad);
+//			equalsBuilder.append(this.horasDedicadas, param.horasDedicadas);
+//			
+//			return equalsBuilder.isEquals();
+//		}
+//		return false;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return ToStringBuilder.reflectionToString(this);
+//	}
 
 }

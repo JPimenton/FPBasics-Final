@@ -8,9 +8,42 @@
 </h:head>
 <h:body>
 	
+	<p:clock displayMode="analog" />
+	<p:growl id="messages" showDetail="false" />
+	<p:menu>
+		<p:submenu label="Menú">
+			<p:menuitem value="Salir" url="index.xhtml" icon="ui-icon-power" />
+		</p:submenu>
+	</p:menu>
 	
-	<p:commandLink actionListener="botonModificarVista.confirmarModificacion(modulo.idModulo,modulo.nombre,modulo.duracion,modulo.curso)">
-					<h:outputText value="Confirmar modificación" />
+	<br/>
+	<h:form>
+	<h1>Registro modificado:</h1>
+	<br/>
+	<p:dataTable var="modulo"
+			value="#{botonModificarVista.registroModulos}">
+			<p:column headerText="Id Módulo">
+				<h:outputText value="#{botonModificarVista.idModulo}" />
+			</p:column>
+			<p:column headerText="Nombre">
+				<h:outputText value="#{botonModificarVista.nombre}"/>
+			</p:column>
+			<p:column headerText="Duración">
+				<h:outputText  value="#{botonModificarVista.duracion}" />
+			</p:column>
+			<p:column headerText="Curso">
+				<h:outputText  value="#{botonModificarVista.curso}"/>
+			</p:column>
+		</p:dataTable>
+	<hr/>
+	<h3>Estos cambios ser harán permanentes.
+	¿Esta seguro?</h3>
+	<br/>
+	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarVista.confirmarModificacion()}" ajax="false" >
+					<h:outputText value="Sí,estoy seguro" />
 	</p:commandLink>
+	<br/>
+	<a href="tablaModulos.xhtml">No,volver atrás</a>
+	</h:form>
 </h:body>
 </html>

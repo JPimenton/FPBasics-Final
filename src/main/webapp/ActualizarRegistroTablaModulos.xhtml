@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 	<title>Menú</title>
 </h:head>
@@ -21,69 +22,49 @@
 		<p:dataTable var="registro"
 			value="#{botonModificarVista.registroModulos}">
 			<p:column headerText="Id Módulo">
-				<h:outputText  value="#{registro.idModulo}" />
+				<h:outputText value="#{registro.idModulo}" />
 			</p:column>
 			<p:column headerText="Nombre">
-				<h:outputText  value="#{registro.nombre}" />
+				<h:outputText value="#{registro.nombre}" />
 			</p:column>
 			<p:column headerText="Duración">
-				<h:outputText  value="#{registro.duracion}" />
+				<h:outputText value="#{registro.duracion}" />
 			</p:column>
 			<p:column headerText="Curso">
 				<h:outputText value="#{registro.curso}" />
 			</p:column>
-		
-		<!--  
+		</p:dataTable>
+
+
 		<p:dataTable var="modulo"
 			value="#{botonModificarVista.registroModulos}">
-			<p:column>
-				<h:outputText value="#{modulo.idModulo}"  />
+			<p:column headerText="Id Módulo">
+				<h:outputText value="#{modulo.idModulo}" />
 			</p:column>
-			<p:column>
-				<h:inputText value="#{modulo.nombre}" />
+			<p:column headerText="Nombre">
+				<h:inputText value="#{modulo.nombre}"/>
 			</p:column>
-			<p:column>
-				<h:inputText value="#{modulo.duracion}" />
+			<p:column headerText="Duración">
+				<h:inputText  value="#{modulo.duracion}" />
 			</p:column>
-			<p:column>
-				<h:inputText value="#{modulo.curso}" />
-			</p:column>
-			<p:column>
-				<p:commandLink id="enviar" action="ConfirmarActualizarModulo.xhtml" ajax="false">
-					<h:outputText value="Enviar" />
-				</p:commandLink>
+			<p:column headerText="Curso">
+				<h:inputText  value="#{modulo.curso}"/>
 			</p:column>
 		</p:dataTable>
 		
-	-->
-		<p:column>
-		<h3>Modificar registro:</h3>
-		<h:panelGrid columns="2">
-			<h:outputLabel for="idModulo">Id Módulo:</h:outputLabel>
-			<h:outputText value="#{botonModificarVista.idModulo}" id="idModulo"/>
-			<br/>
-			<br/>
-
-			<h:outputLabel for="nombre">Nombre:</h:outputLabel>
-			<h:inputText value="#{registro.nombre}"></h:inputText>
-			<br/>
-			<br/>
-
-			<h:outputLabel for="duracion">Duracion:</h:outputLabel>
-			<h:inputText value="#{registro.duracion}"></h:inputText>
-			<br/>
-			<br/>
-
-			<h:outputLabel for="curso">Curso:</h:outputLabel>
-			<h:inputText value="#{registro.curso}"></h:inputText>
-			<br/>
-			<br/>
-
-			<!-- <h:commandButton action="ConfirmarActualizarModulo" value="Enviar"></h:commandButton>-->
-			<a href="ConfirmarActualizarModulo.xhtml" >Enviar</a>
-		</h:panelGrid>
-		</p:column>
-		</p:dataTable>
+		<p:commandLink id="modificar" action="ConfirmarActualizarModulo.xhtml" 
+		actionListener="#{botonModificarVista.generarNuevoObjetoAPartirDeRegistro(modulo.idModulo,modulo.nombre,modulo.duracion,modulo.curso)}" ajax="false"
+		onclick="PF('carga').show()">
+					<h:outputText value="Enviar" />
+				</p:commandLink>	
+		
 	</h:form>
+	
+	<p:dialog header="Cargando..." widgetVar="carga" modal="true"
+			resizable="false">
+			<h:panelGrid id="greeting" columns="1" cellpadding="4">
+				<h:outputText value="Cargando..." />
+			</h:panelGrid>
+		</p:dialog>
 </h:body>
 </html>

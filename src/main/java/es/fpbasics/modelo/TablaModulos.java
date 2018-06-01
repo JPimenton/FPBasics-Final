@@ -1,14 +1,10 @@
 package es.fpbasics.modelo;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 public class TablaModulos {
-	private final Integer idModulo;
-	private final String nombre;
-	private final Integer duracion;
-	private final String curso;
+	private  Integer idModulo;
+	private String nombre;
+	private  Integer duracion;
+	private  String curso;
 
 	public TablaModulos(Integer idModulo, String nombre, Integer duracion, String curso) {
 		super();
@@ -18,6 +14,7 @@ public class TablaModulos {
 		this.curso = curso;
 	}
 
+	
 	public Integer getIdModulo() {
 		return idModulo;
 	}
@@ -33,6 +30,23 @@ public class TablaModulos {
 	public String getCurso() {
 		return curso;
 	}
+	
+	public void setIdModulo(Integer idModulo) {
+		this.idModulo = idModulo;
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+	
+	public void setDuracion(Integer duracion) {
+		this.duracion = duracion;
+	}
+
 
 //	@Override
 //	public int hashCode() {

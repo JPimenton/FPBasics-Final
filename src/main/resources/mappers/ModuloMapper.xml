@@ -3,7 +3,7 @@
 <mapper namespace="es.fpbasics.mapper.ModuloMapper">
 
 	<update id="modificarRegistroDeLaTablaModulos">
-		UPDATE MODULO
+		UPDATE MODULOS
 		SET NOMBRE = #{modulo.nombre},
 			DURACION = #{modulo.duracion},
 			CURSO = #{modulo.curso}
