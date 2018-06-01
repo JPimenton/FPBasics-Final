@@ -8,6 +8,7 @@ import org.springframework.stereotype.*;
 import es.fpbasics.mapper.ModuloMapper;
 import es.fpbasics.modelo.TablaModulos;
 import es.fpbasics.repositorio.RepositorioModulos;
+import es.fpbasics.vistas.BotonModificarModulosVista;
 
 
 @Repository
@@ -27,7 +28,7 @@ public class RepositorioModulosImpl implements RepositorioModulos {
 	}
 
 	
-	public void modificarRegistroDeLaTablaModulos(TablaModulos registro) {
+	public void modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro) {
 		this.mapper.modificarRegistroDeLaTablaModulos(registro);
 		
 	}

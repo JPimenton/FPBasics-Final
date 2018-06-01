@@ -3,6 +3,7 @@ package es.fpbasics.repositorio;
 import java.util.List;
 
 import es.fpbasics.modelo.TablaModulos;
+import es.fpbasics.vistas.BotonModificarModulosVista;
 
 
 public interface RepositorioModulos {
@@ -12,7 +13,7 @@ public interface RepositorioModulos {
 	
 	TablaModulos consultarRegistrosDeLaTablaModulosPorIdModulo(Integer idModulo);
 	
-	void modificarRegistroDeLaTablaModulos(TablaModulos registro);
+	void modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro);
 	
 	 List<TablaModulos> consultarRegistrosDeLaTablaModulosFiltrado(String filtro);
 	

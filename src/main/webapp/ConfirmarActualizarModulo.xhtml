@@ -20,26 +20,26 @@
 	<h:form>
 	<h1>Registro modificado:</h1>
 	<br/>
-	<p:dataTable var="modulo"
-			value="#{botonModificarVista.registroModulos}">
+	<p:dataTable var="registro"
+			value="#{BotonModificarModulosVista.nuevoRegistroModulos}">
 			<p:column headerText="Id Módulo">
-				<h:outputText value="#{botonModificarVista.idModulo}" />
+				<h:outputText value="#{registro.idModulo}" />
 			</p:column>
 			<p:column headerText="Nombre">
-				<h:outputText value="#{botonModificarVista.nombre}"/>
+				<h:outputText value="#{registro.nombre}"/>
 			</p:column>
 			<p:column headerText="Duración">
-				<h:outputText  value="#{botonModificarVista.duracion}" />
+				<h:outputText  value="#{registro.duracion}" />
 			</p:column>
 			<p:column headerText="Curso">
-				<h:outputText  value="#{botonModificarVista.curso}"/>
+				<h:outputText  value="#{registro.curso}"/>
 			</p:column>
 		</p:dataTable>
 	<hr/>
 	<h3>Estos cambios ser harán permanentes.
 	¿Esta seguro?</h3>
 	<br/>
-	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarVista.confirmarModificacion()}" ajax="false" >
+	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarModulosVista.confirmarModificacion}" ajax="false" >
 					<h:outputText value="Sí,estoy seguro" />
 	</p:commandLink>
 	<br/>

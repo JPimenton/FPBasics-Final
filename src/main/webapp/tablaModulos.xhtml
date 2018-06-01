@@ -34,7 +34,7 @@
 			<p:column headerText="Seleccionar registro a modificar:">
 				<p:commandLink id="modificar"
 					action="ActualizarRegistroTablaModulos.xhtml"
-					actionListener="#{botonModificarVista.botonParaUnaPrimaria(modulo.idModulo)}"
+					actionListener="#{botonModificarModulosVista.botonParaUnaPrimaria(modulo.idModulo)}"
 					ajax="false" onclick="PF('carga').show()">
 					<h:outputText value="Modificar registro" />
 				</p:commandLink>

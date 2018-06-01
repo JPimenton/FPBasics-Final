@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import es.fpbasics.modelo.TablaModulos;
 import es.fpbasics.repositorio.RepositorioModulos;
 import es.fpbasics.servicio.ServicioModulos;
+import es.fpbasics.vistas.BotonModificarModulosVista;
 
 
 
@@ -25,7 +26,7 @@ public class ServicioModulosImpl implements ServicioModulos {
 		return this.repositorioModulos.consultarRegistrosDeLaTablaModulosPorIdModulo(idModulo);
 	}
 	
-	public void modificarRegistroDeLaTablaModulos(TablaModulos registro) {
+	public void modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro) {
 		this.repositorioModulos.modificarRegistroDeLaTablaModulos(registro);		
 	}
 

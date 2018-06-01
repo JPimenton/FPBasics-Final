@@ -5,11 +5,12 @@ import java.util.*;
 import org.apache.ibatis.annotations.*;
 
 import es.fpbasics.modelo.TablaModulos;
+import es.fpbasics.vistas.BotonModificarModulosVista;
 
 
 public interface ModuloMapper {
 
-	public int modificarRegistroDeLaTablaModulos(@Param("modulo")TablaModulos registro);	
+	public int modificarRegistroDeLaTablaModulos(@Param("modulo")BotonModificarModulosVista registro);	
 	
 	public List<TablaModulos> consultarTodosLosRegistrosDeLaTablaModulos();
 

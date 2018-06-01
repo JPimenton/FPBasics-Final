@@ -1,5 +1,8 @@
 package es.fpbasics.modelo;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 public class TablaModulos {
 	private  Integer idModulo;
 	private String nombre;
