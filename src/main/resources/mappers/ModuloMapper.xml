@@ -7,7 +7,7 @@
 		SET NOMBRE = #{modulo.nombre},
 			DURACION = #{modulo.duracion},
 			CURSO = #{modulo.curso}
-		WHERE ID_MODULO = #{modulo.idModulo} 
+		WHERE ID_MODULO = #{modulo.idModulos} 
 	</update>
 	<!-- General -->
 	<sql id="baseSelectDocumento">

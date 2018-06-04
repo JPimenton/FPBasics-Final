@@ -21,9 +21,9 @@
 	<h1>Registro modificado:</h1>
 	<br/>
 	<p:dataTable var="registro"
-			value="#{BotonModificarModulosVista.nuevoRegistroModulos}">
+			value="#{botonModificarModulosVista.nuevoRegistroModulos}">
 			<p:column headerText="Id Módulo">
-				<h:outputText value="#{registro.idModulo}" />
+				<h:outputText value="#{registro.idModulos}" />
 			</p:column>
 			<p:column headerText="Nombre">
 				<h:outputText value="#{registro.nombre}"/>
@@ -39,7 +39,7 @@
 	<h3>Estos cambios ser harán permanentes.
 	¿Esta seguro?</h3>
 	<br/>
-	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarModulosVista.confirmarModificacion}" ajax="false" >
+	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarModulosVista.confirmarModificacion()}" ajax="false" >
 					<h:outputText value="Sí,estoy seguro" />
 	</p:commandLink>
 	<br/>
