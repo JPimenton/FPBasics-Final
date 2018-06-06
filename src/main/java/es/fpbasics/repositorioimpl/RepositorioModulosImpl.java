@@ -28,8 +28,8 @@ public class RepositorioModulosImpl implements RepositorioModulos {
 	}
 
 	
-	public void modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro) {
-		this.mapper.modificarRegistroDeLaTablaModulos(registro);
+	public boolean modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro) {
+		return this.mapper.modificarRegistroDeLaTablaModulos(registro);
 		
 	}
 

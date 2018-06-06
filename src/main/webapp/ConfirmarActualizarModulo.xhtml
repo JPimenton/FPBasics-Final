@@ -7,7 +7,7 @@
 	<title>Menú</title>
 </h:head>
 <h:body>
-	
+	<h:form>
 	<p:clock displayMode="analog" />
 	<p:growl id="messages" showDetail="false" />
 	<p:menu>
@@ -17,7 +17,7 @@
 	</p:menu>
 	
 	<br/>
-	<h:form>
+	
 	<h1>Registro modificado:</h1>
 	<br/>
 	<p:dataTable var="registro"
@@ -39,11 +39,20 @@
 	<h3>Estos cambios ser harán permanentes.
 	¿Esta seguro?</h3>
 	<br/>
-	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarModulosVista.confirmarModificacion()}" ajax="false" >
+	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarModulosVista.confirmarModificacion()}" 
+	ajax="false" onclick="PF('carga').show()" update="error">
 					<h:outputText value="Sí,estoy seguro" />
 	</p:commandLink>
 	<br/>
 	<a href="tablaModulos.xhtml">No,volver atrás</a>
 	</h:form>
+	
+	<p:dialog header="Actualizando..." widgetVar="carga" modal="true"
+		resizable="false">
+		<h:panelGrid id="greeting" columns="1" cellpadding="4">
+			<h:outputText value="Realizando actualización, por favor espere..." />
+		</h:panelGrid>
+	</p:dialog>
+	
 </h:body>
 </html>

@@ -8,6 +8,7 @@
 	<title>Menú</title>
 </h:head>
 <h:body>
+	<h:form>
 	<p:clock displayMode="analog" />
 	<p:growl id="messages" showDetail="false" />
 	<p:menu>
@@ -17,7 +18,7 @@
 		</p:submenu>
 	</p:menu>
 	<h1>Actualizar registro tabla Módulos:</h1>
-	<h:form>
+	
 		<p:dataTable var="registro"
 			value="#{botonModificarModulosVista.registroModulos}">
 			<p:column headerText="Id Módulo">
@@ -59,7 +60,7 @@
 					value="#{botonModificarModulosVista.curso}" />
 			</p:column>
 		</p:dataTable>
-
+		<br/>
 		<p:commandLink id="modificar"
 					action="ConfirmarActualizarModulo.xhtml"
 					actionListener="#{botonModificarModulosVista.generarNuevoObjetoAPartirDeRegistro()}"

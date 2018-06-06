@@ -26,17 +26,14 @@ public class ServicioModulosImpl implements ServicioModulos {
 		return this.repositorioModulos.consultarRegistrosDeLaTablaModulosPorIdModulo(idModulo);
 	}
 	
-	public void modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro) {
-		this.repositorioModulos.modificarRegistroDeLaTablaModulos(registro);		
+	public boolean modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro) {
+		return this.repositorioModulos.modificarRegistroDeLaTablaModulos(registro);		
 	}
 
 	public List<TablaModulos> consultarRegistrosDeLaTablaModulosFiltrado(String filtro) {
 		return this.repositorioModulos.consultarRegistrosDeLaTablaModulosFiltrado(filtro);
 
 	}
-
-
-
 	
 
 }

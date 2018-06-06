@@ -12,7 +12,7 @@ public interface  ServicioModulos {
 	
 	TablaModulos consultarRegistrosDeLaTablaModulosPorIdModulo(Integer idModulo);
 	
-	void modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro);
+	boolean modificarRegistroDeLaTablaModulos(BotonModificarModulosVista registro);
 
 	List<TablaModulos> consultarRegistrosDeLaTablaModulosFiltrado(String filtro);
 

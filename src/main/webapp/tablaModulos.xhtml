@@ -17,7 +17,15 @@
 			</p:submenu>
 		</p:menu>
 		<h1>Registros de la tabla Módulos</h1>
-
+		<br/>
+		<p:commandLink id="modificar"
+					action="consultaFiltradaTablaModulos.xhtml"
+					actionListener="#{realizarConsultaFiltrada.navega()}"
+					ajax="false" onclick="PF('carga').show()">
+					<h:outputText value="Click aquí para realizar una consulta específica." />
+		</p:commandLink>
+		
+		<br/>
 		<p:dataTable var="modulo" value="#{tablaModulosVista.modulos}">
 			<p:column headerText="Id Módulo">
 				<h:outputText value="#{modulo.idModulo}" />
@@ -36,7 +44,7 @@
 					action="ActualizarRegistroTablaModulos.xhtml"
 					actionListener="#{botonModificarModulosVista.botonParaUnaPrimaria(modulo.idModulo)}"
 					ajax="false" onclick="PF('carga').show()">
-					<h:outputText value="Modificar registro" />
+					<h:outputText value="Actualizar" />
 				</p:commandLink>
 			</p:column>
 		</p:dataTable>

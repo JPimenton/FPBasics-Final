@@ -20,9 +20,9 @@ public class BotonModificarModulosVista extends ApplicationContextHerency implem
 	TablaModulos registroModulos;
 	BotonModificarModulosVista nuevoRegistroModulos;
 	
-	Integer idModulos,duracion;
-	String nombre,curso;
-
+	private Integer idModulos,duracion;
+	private String nombre,curso,mensaje;
+	private boolean confirmacion; 
 	@PostConstruct
 	public void init(){
 		
@@ -54,15 +54,21 @@ public class BotonModificarModulosVista extends ApplicationContextHerency implem
 	}
 	
 		
-	public void confirmarModificacion() {
+	public String confirmarModificacion() {
 		System.out.println("Entrando,este es el nuevo registro:");
 		System.out.println(nuevoRegistroModulos.getIdModulos());
 		System.out.println(nuevoRegistroModulos.getNombre());
 		System.out.println(nuevoRegistroModulos.getDuracion());
 		System.out.println(nuevoRegistroModulos.getCurso());
-		this.servicio.modificarRegistroDeLaTablaModulos(nuevoRegistroModulos);
-			
-		System.out.println("Actualizacion realizada con exito.");
+		confirmacion = this.servicio.modificarRegistroDeLaTablaModulos(nuevoRegistroModulos);
+		
+		if (confirmacion){
+			return "tablaModulos.xhtml";
+		}
+		
+		else {
+			return "ConfirmarActualizarModulo.xhtml";
+		}
 	}
 
 	public TablaModulos getRegistroModulos() {
@@ -79,6 +85,14 @@ public class BotonModificarModulosVista extends ApplicationContextHerency implem
 
 	public void setNuevoRegistroModulos(BotonModificarModulosVista nuevoRegistroModulos) {
 		this.nuevoRegistroModulos = nuevoRegistroModulos;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
 	}
 
 	public Integer getIdModulos() {

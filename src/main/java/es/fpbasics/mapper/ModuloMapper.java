@@ -10,7 +10,7 @@ import es.fpbasics.vistas.BotonModificarModulosVista;
 
 public interface ModuloMapper {
 
-	public int modificarRegistroDeLaTablaModulos(@Param("modulo")BotonModificarModulosVista registro);	
+	public boolean modificarRegistroDeLaTablaModulos(@Param("modulo")BotonModificarModulosVista registro);	
 	
 	public List<TablaModulos> consultarTodosLosRegistrosDeLaTablaModulos();
 
