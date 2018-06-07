@@ -39,7 +39,7 @@ public class RepositorioBloquesImpl implements RepositorioBloques {
 	}
 
 	public List<TablaBloques> consultarRegistrosDeLaTablaBloqueFiltrado(String filtro) {
-		filtro = "%"+filtro+"%";
+		filtro = ""+filtro+"%";
 		return this.mapper.consultarRegistrosDeLaTablaBloqueFiltrado(filtro);
 	}
 	
