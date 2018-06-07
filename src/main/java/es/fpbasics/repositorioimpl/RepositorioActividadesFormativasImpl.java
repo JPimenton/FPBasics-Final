@@ -42,7 +42,7 @@ public class RepositorioActividadesFormativasImpl implements RepositorioActivida
 	}
 
 	public List<TablaActividadesFormativas> consultarRegistrosDeLaTablaActividadesFormativasFiltrado(String filtro) {
-		filtro = "%"+filtro+"%";
+		filtro = ""+filtro+"%";
 		return this.mapper.consultarRegistrosDeLaTablaActividadesFormativasFiltrado(filtro);
 	}
 	
