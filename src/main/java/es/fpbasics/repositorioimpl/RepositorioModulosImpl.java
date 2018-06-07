@@ -35,7 +35,7 @@ public class RepositorioModulosImpl implements RepositorioModulos {
 
 
 	public List<TablaModulos> consultarRegistrosDeLaTablaModulosFiltrado(String filtro) {
-		filtro = "%"+filtro+"%";
+		filtro = ""+filtro+"%";
 		return this.mapper.consultarRegistrosDeLaTablaModuloFiltrado(filtro);
 
 	}
