@@ -37,7 +37,7 @@ public class RepositorioResultadosAprendizajeImpl implements RepositorioResultad
 	}
 
 	public List<TablaResultadosAprendizaje> consultarRegistrosDeLaTablaResultadoAprendizajeFiltrado(String filtro) {
-		filtro = "%"+filtro+"%";
+		filtro = ""+filtro+"%";
 		return this.mapper.consultarRegistrosDeLaTablaResultadoAprendizajeFiltrado(filtro);
 
 	}
