@@ -35,7 +35,7 @@ public class RepositorioFormadoresImpl implements RepositorioFormadores {
 	}
 
 	public List<TablaFormadores> consultarRegistrosDeLaTablaFormadoresFiltrado(String filtro) {
-		filtro = "%"+filtro+"%";
+		filtro = ""+filtro+"%";
 		return 	this.mapper.consultarRegistrosDeLaTablaFormadoresFiltrado(filtro);
 
 	}
