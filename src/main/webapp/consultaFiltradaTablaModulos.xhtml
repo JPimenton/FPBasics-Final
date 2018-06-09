@@ -18,14 +18,17 @@
 					icon="ui-icon-power" />
 			</p:submenu>
 		</p:menu>
+		<br/>
 		<h1>Realizar consulta filtrada:</h1>
+		<br/>
 		<br/>
 		<p:outputLabel value="Inserte nombre del módulo y/o curso:" />
 		<br/>
 		<h:inputText required="true"
 			value="#{realizarConsultaFiltrada.filtro}" />
 			
-		<br />
+		<br/>
+		<br/>
 		<p:commandLink id="consultar" action="mostrarConsultaFiltradaTablaModulos.xhtml"
 			actionListener="#{realizarConsultaFiltrada.realizarConsultaFiltrada()}"
 			ajax="false" onclick="PF('carga').show()">

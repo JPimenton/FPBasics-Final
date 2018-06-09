@@ -41,10 +41,13 @@
 	<br/>
 	<p:commandLink action="tablaModulos.xhtml" actionListener="#{botonModificarModulosVista.confirmarModificacion()}" 
 	ajax="false" onclick="PF('carga').show()" update="error">
-					<h:outputText value="Sí,estoy seguro" />
+					<h:outputText value="Sí,estoy seguro." />
 	</p:commandLink>
 	<br/>
-	<a href="tablaModulos.xhtml">No,volver atrás</a>
+	<p:commandLink action="ActualizarRegistroTablaModulos.xhtml" actionListener="#{botonModificarModulosVista.atras()}" 
+	ajax="false" onclick="PF('carga').show()" update="error">
+					<h:outputText value="No,volver atrás." />
+	</p:commandLink>
 	</h:form>
 	
 	<p:dialog header="Actualizando..." widgetVar="carga" modal="true"

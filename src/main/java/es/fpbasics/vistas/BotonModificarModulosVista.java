@@ -54,7 +54,7 @@ public class BotonModificarModulosVista extends ApplicationContextHerency implem
 	}
 	
 		
-	public String confirmarModificacion() {
+	public void confirmarModificacion() {
 		System.out.println("Entrando,este es el nuevo registro:");
 		System.out.println(nuevoRegistroModulos.getIdModulos());
 		System.out.println(nuevoRegistroModulos.getNombre());
@@ -62,13 +62,10 @@ public class BotonModificarModulosVista extends ApplicationContextHerency implem
 		System.out.println(nuevoRegistroModulos.getCurso());
 		confirmacion = this.servicio.modificarRegistroDeLaTablaModulos(nuevoRegistroModulos);
 		
-		if (confirmacion){
-			return "tablaModulos.xhtml";
-		}
-		
-		else {
-			return "ConfirmarActualizarModulo.xhtml";
-		}
+	}
+	
+	public void atras() {
+		System.out.println("volviendo atrás");
 	}
 
 	public TablaModulos getRegistroModulos() {
